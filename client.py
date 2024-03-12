@@ -19,7 +19,8 @@ def recv_message(client):
             data = client.recv(1024)
             print('\nMessage from server:', data.decode())
 
-            if data.decode() == 'q':
+            if data.decode() == 'quit':
+                client.close()
                 break
         except Exception as e:
             print(e)
