@@ -6,7 +6,7 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 try:
     ip_choice = int(input('Local-network IP adress or localhost(1/2): '))
     if ip_choice == 1:
-        IP = socket.gethostbyname(socket.gethostname())
+        IP = socket.gethostbyname(socket.gethostname())    # doesn't work on linux
         print(f'Your ip in local network is {IP}')
     else:
         IP = 'localhost'
