@@ -22,6 +22,12 @@ async def handler(reader, writer):
     await asyncio.gather(t1, t2)
 
 
+async def main():
+    serv = await asyncio.start_server(handler, "127.0.0.1", 9000)
+    async with serv as s:
+        await s.serve_forever()
+
+
 clients = dict()
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 try:
